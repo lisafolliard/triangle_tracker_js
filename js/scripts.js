@@ -1,13 +1,11 @@
-var triangleTracker = function(triangle){
-
-   var side1= 5;
-   var side2= 5;
-   var side3= 10;
-
-  if((side1+side2<=side3)) {
-    return true;
-  } else {
+var triangleTracker = function(a, b, c) {
+  if ( ((a + b) < c) || ((a + c) < b) || ((c + b) < a) ){
     return false;
+  } else if ((a === b) && (b === c)) {
+    return "equilateral";
+  } else {
+    return true;
   }
+
 
 };
