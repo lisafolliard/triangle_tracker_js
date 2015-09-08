@@ -8,6 +8,19 @@ var triangleTracker = function(a, b, c) {
   } else {
     return true;
   }
-
-
 };
+
+
+$(document).ready(function() {
+  $("form#triangle_tracker").submit(function(event) {
+    var a = parseInt($("input#side_a").val());
+    var b = parseInt($("input#side_b").val());
+    var c = parseInt($("input#side_c").val());
+    var result = triangleTracker(a ,b ,c);
+
+    $(".type").text(result);
+
+    $("#result").show();
+      event.preventDefault();
+  });
+});
